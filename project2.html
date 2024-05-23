@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Saiteja</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Portfolio</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="allprojects.html">PROJECTS</a></li>
+
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>saiteja reddy vangumalla</h2>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<h2><strong>Overview of COVID-19 Data Analysis Project</strong></h2>
+                                    <br>
+                                    <b>Goal</b><br>
+									<br>
+                                    The primary goal of this project is to visualize various aspects of the COVID-19 pandemic using comprehensive datasets that encompass case data, socioeconomic indicators, and geographical information.<br>
+									<br>
+                                    <b>Data Sources</b><br>
+									<br>
+                                    <b>COVID-19 Case Data</b><br>
+
+                                    Source: JHU CSSE GitHub Repository<br>
+                                    Description: Time series data of confirmed, recovered, and fatal cases of COVID-19, segmented by country and region.<br>
+                                    <br>
+									<b>Socioeconomic Data</b><br>
+
+                                    Source: The World Bank<br>
+                                    Indicators: GDP per capita PPP, Population, Urban Population, Population living in slums, Rural population, Life expectancy at birth, Current healthcare expenditure.<br>
+                                   <br>
+									<b>Geographical Data</b><br>
+
+                                    Source: Datahub<br>
+                                    Description: Country and continent codes.<br>
+									<br>
+                                    <strong>Data Wrangling</strong> <br>
+									<br>
+                                    <b>COVID-19 Data</b><br>
+									<br>
+                                    &bull; <b>Original Data:</b>Downloaded from the JHU CSSE GitHub repository, with each region in separate rows. The data is grouped by country and rows for cases on boats are removed.<br>
+                                    &bull; <b>Derived Data:</b><br>
+                                    		 <b>Mortality Rate:</b> Calculated as dead / confirmed.<br>
+											 <b>Active Cases:</b> Calculated as confirmed - recovered - dead.<br>
+											 <b>Daily Change in Cases:</b> Derived by applying a differencing operator to confirmed cases.<br>
+                                    <b>Scripts:</b> See src/features/make_cases.py for processing details.<br>
+									<br>
+                                    <strong>World Bank Data</strong><br>
+									<br>
+                                    &bull; <b>Original Data:</b> Downloaded using the wbdata library, including various socioeconomic indicators.<br>
+                                    &bull; <b>Extraction:</b> The last known value of each indicator for a given country is extracted.<br>
+                                    <b>Scripts:</b> See src/features/make_world_bank.py for processing details.<br>
+									<br>
+                                    <strong> Continent Mapping</strong><br>
+									<br>
+                                    &bull; <b>Data:</b> Lists of countries with their respective continents and three-letter codes are downloaded and processed.<br>
+                                    <b>Scripts:</b> See src/features/make_continent.py for processing details.<br>
+									<br>
+                                    <strong> Processed Data Files</strong><br>
+									<br>
+                                    After data cleaning, preparation, and joining, the processed datasets are stored in the data/processed directory. Below is a brief description of the contents of each file:<br>
+									<br>
+									<a href="#" class="image"><img src="images/data-cv19.png" alt="" /></a>
+									<br>
+									<strong>Exploratory_analysis_socioeconomic</strong><br>
+									<br> 
+									<b>Objective</b><br>
+									Exploring the relationship between COVID-19 impact and various socioeconomic indicators.<br>
+									<br>
+									<b>Key Steps</b><br>
+									<b>Data Loading:</b> Load COVID-19 case data and World Bank socioeconomic data.<br>
+									<b>Data Cleaning:</b> Clean and preprocess the datasets to ensure they can be merged and analyzed together.<br>
+									<br>
+									<b>Exploratory Analysis:</b><br>
+									&bull; Correlation analysis between COVID-19 cases and indicators such as GDP per capita, population density, healthcare expenditure, etc.<br>
+									<a href="#" class="image"><img src="images/Correlation matrix.png" alt="" /></a><br>
+									<br>
+									&bull; Identifying patterns and insights on how socioeconomic factors affect COVID-19 outcomes.<br>
+									<a href="#" class="image"><img src="images/Mortality.png" alt="" /></a><br>
+									<br>
+									<b>Gains</b><br>
+									
+									&bull; <b>Understanding Correlations:</b> Insights into how socioeconomic factors like GDP per capita, population density, healthcare expenditure, and urbanization correlate with COVID-19 cases and mortality rates.<br>
+									&bull; <b>Policy Implications:</b> Identification of vulnerable regions based on socioeconomic indicators, which can inform targeted policy interventions and resource allocation.<br>
+									&bull; <b>Predictive Insights:</b> Basis for developing predictive models that incorporate socioeconomic variables to forecast COVID-19 spread and impact.<br>
+									<br>
+									<strong>Exploratory_analysis_fancy_plot</strong><br>
+									<br> 
+									<b>Objective</b><br>
+									Creating advanced and visually appealing plots to illustrate various aspects of the COVID-19 data. It aims to present the data in an insightful and aesthetically pleasing manner.<br>
+									<br>
+									<b>Key Steps</b><br>
+									
+									<b>Data Loading:</b> Load the processed COVID-19 datasets.<br>
+									<b>Visualization Techniques:</b><br>
+									
+									&bull;Heatmaps and choropleth maps to show the geographical spread of COVID-19.<br>
+									<a href="#" class="image"><img src="images/facncyplot.png" alt="" /></a><br>
+									<br>
+									<b>Gains</b><br>
+									
+									&bull; <b>Enhanced Data Interpretation:</b> Advanced visualizations (e.g., heatmaps, choropleth maps, animated plots) make it easier to interpret complex data and identify trends.<br>
+									&bull; <b>Engaging Presentations:</b> Interactive and aesthetically pleasing plots enhance engagement and understanding when presenting data to stakeholders.<br>
+									&bull; <b>Identification of Trends:</b> Detailed visualizations help in pinpointing specific trends, anomalies, and patterns in the data that might not be obvious in basic plots.<br>
+									<br>
+									<strong>Exploratory-analysis-mortality</strong><br>
+									<br>
+									<b>Objective</b><br>
+									 Delving into the mortality aspect of the COVID-19 pandemic to uncover patterns or factors influencing mortality rates.<br>
+									<br>
+									<b>Key Steps</b><br>
+									
+									<b>Data Loading:</b> Load datasets related to COVID-19 deaths and recovered cases.<br>
+									<b>Mortality Rate Calculation: </b>Compute the mortality rate (dead/confirmed) for various regions.<br>
+									<br>
+									<b>Analysis:</b><br>
+									&bull; Time series analysis of death rates across different countries.<br>
+									&bull; Comparison of mortality rates with other metrics like healthcare expenditure, life expectancy, etc.<br>
+									&bull; Identifying high-risk countries or regions with exceptionally high mortality rates.<br>
+									<br>
+									<b>Visualization:</b><br>
+									
+									&bull; Geographic distribution of mortality rates.<br>
+									<a href="#" class="image"><img src="images/Change in cases over time.png" alt="" /></a><br>
+									<br>
+									<a href="#" class="image"><img src="images/Countries with highest mortality rate.png" alt="" /></a><br>
+									<br>
+									<b>Gains</b><br>
+									
+									&bull; <b>Mortality Trends:</b> Understanding how mortality rates vary over time and across different regions, helping to identify high-risk areas.<br>
+									&bull; <b>Influence of Socioeconomic Factors:</b> Analysis of how factors such as healthcare expenditure, life expectancy, and population demographics impact mortality rates.<br>
+									&bull; <b>Resource Allocation:</b> Insights into mortality patterns can guide the allocation of medical resources and interventions to reduce fatalities.<br>
+									<br>
+									<strong>Exploratory-analysis-globally</strong><br>
+									<br>
+									<b>Objective</b><br>
+									To provide a global perspective on the COVID-19 pandemic, analyzing the spread and impact of the virus across different continents and countries.<br>
+									<br>
+									<b>Key Steps</b><br>
+									
+									<b>Data Loading:</b> Load the global COVID-19 datasets, including cases, deaths, and recoveries.<br>
+									<b>Global Analysis:</b><br>
+									&bull; Overview of the global spread of COVID-19 with total and daily new cases.<br>
+									<a href="#" class="image"><img src="images/globally.png" alt="" /></a><br>
+									&bull; Continental and country-wise breakdown of COVID-19 statistics.<br>
+									<a href="#" class="image"><img src="images/COVID19 - By continent.png" alt="" /></a><br>
+									<a href="#" class="image"><img src="images/COVID - By country.png" alt="" /></a><br>
+									&bull; Visualization of global trends and significant events in the pandemic timeline.<br>
+									<a href="#" class="image"><img src="images/COVID19 - Growth rates.png" alt="" /></a><br>
+									<br>
+									
+									<b>Gains</b><br>
+									
+									&bull; <b>Global Overview:</b> Comprehensive understanding of the global spread and impact of COVID-19, highlighting the most and least affected regions.<br>
+									&bull; <b>Comparative Insights:</b> Comparing the effectiveness of different countries responses to the pandemic, identifying best practices and areas needing improvement.<br>
+									&bull; <b>Trend Analysis:</b> Identifying global trends and significant events in the pandemic timeline, aiding in understanding the progression and control of the virus.<br>
+									<br>
+									<strong>Summary</strong><br>
+									<br> 
+									<b>Informed Decision-Making:</b> Each EDA provides insights that can inform policy-making, public health strategies, and resource allocation to manage and mitigate the impact of COVID-19.<br>
+									<b>Holistic Understanding:</b> Combining different perspectives (socioeconomic, mortality, global spread) offers a holistic understanding of the pandemic's multifaceted impact.<br>
+									<b>Predictive Modeling:</b> The analyses lay the groundwork for developing predictive models that can forecast future trends and outcomes based on historical data and identified correlations.<br>
+									<b>Public Awareness and Education:</b> Advanced visualizations and detailed analyses enhance public awareness and education about the pandemic, promoting informed behaviors and compliance with health guidelines.<br>
+									<b>Research and Development: </b>Insights gained can drive further research into specific areas of interest, such as the impact of specific socioeconomic factors on health outcomes or the effectiveness of various containment measures.<br>
+									<br>
+									These gains collectively contribute to a more informed and effective response to the COVID-19 pandemic, leveraging data-driven insights to improve outcomes and preparedness for future health crises.
+								</div>
+							</div>
+
+					</section>
+
+				
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
